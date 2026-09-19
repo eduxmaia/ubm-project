@@ -31,3 +31,18 @@
   border: 1px solid #6b64d1;
   border-radius: 8px;
 }
+
+.lista-vazia {
+  padding: 48px 32px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  color: #475569;
+  font-size: 1.1rem;
+}
+
+.contador {
+  padding: 16px 32px 0;
+  background: #f5f7fb;
+  color: #475569;
+  margin: 0;
+}

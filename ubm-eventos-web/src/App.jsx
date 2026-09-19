@@ -25,20 +25,35 @@ function App() {
 
       </section>
 
+      {busca !== '' && (
+        <p className="contador">
+          {eventosFiltrados.length} evento(s) encontrado(s)
+        </p>
+      )}
 
-      <main className="lista-eventos">
-        {eventosFiltrados.map((evento) => (
-          <EventoCard
-            key={evento.id}
-            titulo={evento.titulo}
-            tipo={evento.tipo}
-            data={evento.data}
-            local={evento.local}
-            vagas={evento.vagas}
-            palestrante={evento.palestrante}
-          />
-        ))}
-      </main>
+
+      {eventosFiltrados.length === 0 ? (
+        <p className="lista-vazia">
+          Nenhum evento encontrado para "{busca}".
+        </p>
+      ) : (
+        <main className="lista-eventos">
+          {eventosFiltrados.map((evento) => (
+            <EventoCard
+              key={evento.id}
+              titulo={evento.titulo}
+              tipo={evento.tipo}
+              data={evento.data}
+              local={evento.local}
+              vagas={evento.vagas}
+              palestrante={evento.palestrante}
+            />
+          ))}
+        </main>
+      )}
+
+
+
 
       <Rodape />
     </>
