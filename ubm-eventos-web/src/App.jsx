@@ -26,6 +26,12 @@ function App() {
       </section>
 
       {busca !== '' && (
+        <button className="limpar-busca" onClick={() => setBusca('')}>
+          Limpar busca
+        </button>
+      )}
+
+      {busca !== '' && (
         <p className="contador">
           {eventosFiltrados.length} evento(s) encontrado(s)
         </p>
