@@ -6,6 +6,11 @@ import "./App.css";
 import Rodape from "./components/Rodape";
 function App() {
   const [busca, setBusca] = useState('');
+
+  const eventosFiltrados = eventos.filter((evento) =>
+    evento.titulo.toLowerCase().includes(busca.toLowerCase())
+  );
+
   return (
     <>
       <Header />
@@ -17,11 +22,12 @@ function App() {
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
         />
-        
+
       </section>
 
+
       <main className="lista-eventos">
-        {eventos.map((evento) => (
+        {eventosFiltrados.map((evento) => (
           <EventoCard
             key={evento.id}
             titulo={evento.titulo}
@@ -30,12 +36,10 @@ function App() {
             local={evento.local}
             vagas={evento.vagas}
             palestrante={evento.palestrante}
-
-
-
           />
         ))}
       </main>
+
       <Rodape />
     </>
   );
