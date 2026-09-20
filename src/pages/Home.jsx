@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 import axios from "axios";
@@ -90,6 +91,7 @@ function Home() {
           {eventosFiltrados.map((evento) => (
             <EventoCard
               key={evento.id}
+              id={evento.id}
               titulo={evento.titulo}
               tipo={evento.tipo}
               data={evento.data}
