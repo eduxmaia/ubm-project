@@ -57,3 +57,12 @@
   cursor: pointer;
   width: 100%;
 }
+
+.aviso {
+  padding: 48px 32px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  color: #475569;
+  font-size: 1.1rem;
+  margin: 0;
+}
